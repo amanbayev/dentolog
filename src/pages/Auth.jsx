@@ -139,12 +139,13 @@ const Auth = () => {
                   className="my-font"
                   style={{
                     fontSize: '32px',
+                    lineHeight: '38px',
                     color: '#fff',
                   }}
                 >
-                  Sign in via Facebook
+                  <FacebookOutlined />
+                  &nbsp;&nbsp;Sign in via Facebook
                 </span>
-                <FacebookOutlined />
               </Button>
             </center>
           </Card>

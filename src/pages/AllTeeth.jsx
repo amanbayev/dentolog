@@ -1,11 +1,12 @@
 import React from 'react';
-import { Space, Card, Button } from 'antd';
+import { Row, Card, Col, Button } from 'antd';
 import { navigate } from '@reach/router';
 
 const AllTeeth = () => {
   const clickTooth = (number) => {
     // TODO: implement route to tooth page...
     console.log('tooth number ' + number + ' is clicked!');
+    navigate(`/teeth/${number}`);
   };
 
   const coordsArray = [
@@ -61,91 +62,40 @@ const AllTeeth = () => {
   };
 
   return (
-    <div style={{ width: '1000px', margin: '0 auto' }}>
-      <Space
-        style={{ height: '100vh', width: '1000px' }}
-        size="0"
-        align="center"
-      >
+    <Row style={{ height: '100vh' }} align="middle" justify="center">
+      <Col>
         <Card
           style={{
-            width: '400px',
-            height: '855px',
-            backgroundColor: '#053868',
-            boxShadow: '0px 4px 12px 5px rgba(0,0,0,0.25)',
-            borderRadius: '24px',
-            borderWidth: '0px',
-          }}
-        >
-          <center>
-            <p
-              className="my-font"
-              style={{
-                color: '#FFF',
-                fontStyle: 'normal',
-                fontWeight: 'bold',
-                lineHeight: '58px',
-                fontSize: '48px',
-              }}
-            >
-              Talgat Amanbayev
-            </p>
-            <img src="/img/image 1.png" alt="avatar" />
-            <p style={{ marginTop: '48px', color: '#FFF', fontSize: '24px' }}>
-              ID: 870312 300561
-            </p>
-            <p style={{ color: '#FFF', fontSize: '24px' }}>
-              <u>amanbayev@gmail.com</u>
-            </p>
-            <Button
-              className="my-font"
-              style={{
-                color: '#FFF',
-                height: '48px',
-                backgroundColor: '#336699',
-                fontStyle: 'normal',
-                fontWeight: 'bold',
-                lineHeight: '36px',
-                fontSize: '32px',
-              }}
-              onClick={() => navigate('/')}
-            >
-              Log out
-            </Button>
-          </center>
-        </Card>
-        <Card
-          style={{
-            width: '600px',
-            height: '800px',
             backgroundColor: '#F8F8F8',
-            borderRadius: '0 24px 24px 0',
-            boxShadow: '0px 4px 12px 5px rgba(0,0,0,0.25)',
+            borderRadius: '24px',
+            margin: '16px',
+            boxShadow: '0px 4px 12px 4px rgba(0,0,0,0.25)',
           }}
         >
-          <center>
-            <p
-              className="my-font"
-              style={{
-                color: '#053868',
-                fontStyle: 'normal',
-                fontWeight: 'bold',
-                lineHeight: '58px',
-                fontSize: '48px',
-              }}
-            >
-              Select tooth
-            </p>
-            <div style={{ width: '390px', height: '600px' }}>
-              <img src="/img/image 2.png" alt="" useMap="#image_map" />
-              <map name="image_map">
-                {coordsArray.map((coord, index) => renderCoords(index, coord))}
-              </map>
-            </div>
-          </center>
+          <Button onClick={() => navigate('/')}>Back</Button>
+          <span
+            className="my-font"
+            style={{
+              color: '#053868',
+              fontStyle: 'normal',
+              fontWeight: 'bold',
+              marginLeft: '24px',
+              lineHeight: '58px',
+              fontSize: '48px',
+            }}
+          >
+            Select tooth
+          </span>
+
+          <div style={{ width: '390px', height: '600px' }}>
+            <img src="/img/image 2.png" alt="" useMap="#image_map" />
+            <map name="image_map">
+              {coordsArray.map((coord, index) => renderCoords(index, coord))}
+            </map>
+          </div>
         </Card>
-      </Space>
-    </div>
+      </Col>
+    </Row>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Space, Button, Form, Input } from 'antd';
+import { Card, Row, Col, Button, Form, Input } from 'antd';
 import { FacebookOutlined } from '@ant-design/icons';
 import { navigate } from '@reach/router';
 
@@ -10,58 +10,13 @@ const Auth = () => {
   };
 
   return (
-    <div style={{ width: '1000px', margin: '0 auto' }}>
-      <Space
-        style={{ height: '100vh', width: '1000px' }}
-        size="0"
-        align="center"
-      >
+    <Row style={{ height: '100vh' }} justify="center" align="middle">
+      <Col>
         <Card
           style={{
-            borderRadius: '30px 0 0 30px',
+            borderRadius: '30px',
             borderStyle: 'none',
-            height: '600px',
-            width: '440px',
-            backgroundColor: '#053868',
-            padding: '0',
-            margin: '0',
-          }}
-        >
-          <center>
-            <p
-              className="my-font"
-              style={{
-                color: '#FFF',
-                fontStyle: 'normal',
-                fontWeight: 'bold',
-                lineHeight: '58px',
-                fontSize: '48px',
-              }}
-            >
-              Hello, Friend!
-            </p>
-            <p
-              className="my-font"
-              style={{
-                color: '#FFF',
-                fontStyle: 'normal',
-                fontWeight: 'bold',
-                lineHeight: '38px',
-                fontSize: '32px',
-              }}
-            >
-              This is a project for nFactorial course - react track.
-            </p>
-          </center>
-        </Card>
-        <Card
-          style={{
-            borderRadius: '0 30px 30px 0',
-            height: '600px',
-            borderStyle: 'none',
-
-            width: '560px',
-            margin: '0',
+            padding: '16px',
           }}
         >
           <center>
@@ -75,7 +30,7 @@ const Auth = () => {
                 fontSize: '48px',
               }}
             >
-              Sign in to Dentolog
+              Dentolog
             </p>
 
             <Form onFinish={onFormFinish}>
@@ -109,20 +64,10 @@ const Auth = () => {
                   style={{
                     backgroundColor: '#053868',
                     color: '#FFF',
-                    height: '57px',
-                    padding: '0 32px',
                     borderRadius: '29px',
                   }}
                 >
-                  <span
-                    className="my-font"
-                    style={{
-                      fontSize: '32px',
-                      color: '#fff',
-                    }}
-                  >
-                    Sign in
-                  </span>
+                  Sign in
                 </Button>
               </Form.Item>
             </Form>
@@ -131,27 +76,16 @@ const Auth = () => {
               style={{
                 backgroundColor: '#053868',
                 color: '#FFF',
-                height: '57px',
-                padding: '0 32px',
                 borderRadius: '29px',
               }}
+              icon={<FacebookOutlined />}
             >
-              <span
-                className="my-font"
-                style={{
-                  fontSize: '32px',
-                  lineHeight: '38px',
-                  color: '#fff',
-                }}
-              >
-                <FacebookOutlined />
-                &nbsp;&nbsp;Sign in via Facebook
-              </span>
+              Sign in via Facebook
             </Button>
           </center>
         </Card>
-      </Space>
-    </div>
+      </Col>
+    </Row>
   );
 };
 
